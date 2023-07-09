@@ -1,0 +1,30 @@
+{% extends 'beer/base.html' %}
+{% block content %}
+    <div>
+        <h1>All reviews</h1>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Description</th>
+                    <th>Photo</th>
+                    <th>When created</th>
+                </tr>
+                {% for beer in beers %}
+                    <tr>
+                        <td>{{beer.name}}</td>
+                        <td>{{beer.price}}rub</td>
+                        <td>{{beer.rating}}</td>
+                        <td>{{beer.content}}</td>
+                        <td>{{beer.photo}}</td>
+                        <td>{{beer.time_create}}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
