@@ -1,0 +1,13 @@
+{% extends 'beer/base.html' %}
+{% block content %}
+    <h2>Author nickname - {{ beer_name.nickname }}</h2>
+    <h2>Beer name - {{ beer_name.name }}</h2>
+    <h2>Price - {{ beer_name.price }}rub</h2>
+    <h2>Description - {{ beer_name.content }}</h2>
+    <h2>Rating - {{ beer_name.rating }}</h2>
+    <h2>When added - {{ beer_name.time_create|date:"d.m.Y H:i:s" }}</h2>
+    <h2>When updated - {{ beer_name.time_update|date:"d.m.Y H:i:s" }}</h2>
+    {% if beer_name.photo %}
+       <p><img height="300px" src="{{ beer_name.photo.url }}"></p>
+    {% endif  %}
+{% endblock %}

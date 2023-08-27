@@ -1,0 +1,17 @@
+{% extends 'beer/base.html' %}
+{% block content %}
+{% for i in cat %}
+    <h1>{{ i.name }}'s</h1>
+{% endfor %}
+
+{% for i in beers %}
+    <h1>{{ i.name }}</h1>
+    <small>{{ i.time_create|date:"d-m-Y H:i:s" }}</small>
+    {% if i.photo %}
+        <p><img height="100px" src="{{ i.photo.url }}"></p>
+    {% endif  %}
+    <p><a href="{{ i.get_absolute_url }}">View more...</a></p>
+{% endfor %}
+
+
+{% endblock %}
